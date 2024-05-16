@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://y2ss41n8yeu2"]
+
+[ext_resource type="Script" path="res://player_controller.gd" id="1_8fsrh"]
+[ext_resource type="ArrayMesh" uid="uid://b0k5xgjt4jc40" path="res://assets/meshes/lilboat.obj" id="1_i6ud1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r8s0k"]
+size = Vector3(3.75, 2, 5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mpnij"]
+size = Vector3(25, 4, 25)
+
+[sub_resource type="BoxMesh" id="BoxMesh_j5vvb"]
+size = Vector3(50, 5, 50)
+
+[node name="Level" type="Node3D"]
+
+[node name="boat" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.50532, 0)
+script = ExtResource("1_8fsrh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="boat"]
+shape = SubResource("BoxShape3D_r8s0k")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="boat/CollisionShape3D"]
+mesh = ExtResource("1_i6ud1")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.993636, -0.0310213, 0.108283, 0.0165481, 0.910694, 0.412749, -0.111417, 0.411914, -0.904385, -1.39914, 8.11239, -9.01067)
+fov = 90.0
+
+[node name="Floor" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.25421, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+shape = SubResource("BoxShape3D_mpnij")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor/CollisionShape3D"]
+mesh = SubResource("BoxMesh_j5vvb")
+skeleton = NodePath("../..")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.121748, 0, 0.992561, 0, 1, 0, -0.992561, 0, -0.121748, -50.5539, 28.1436, 48.71)
+light_energy = 2.133
+light_indirect_energy = 2.438
