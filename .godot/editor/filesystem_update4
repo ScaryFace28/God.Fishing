@@ -1,2 +1,3 @@
 res://scenes/Levels/prototype.tscn
 res://scenes/level.tscn
+res://player_controller.gd
