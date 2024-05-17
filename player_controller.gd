@@ -7,7 +7,7 @@ var deceleration = 5.0
 var rotation_speed = 1.0
 var gravity = -9.8
 
-func _integrate_forces(state):
+func _integrate_forces(_state):
 	# Get input from the player
 	var input_vector = Vector3.ZERO
 	input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
