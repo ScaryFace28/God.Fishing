@@ -1,10 +1,14 @@
-[gd_scene load_steps=22 format=3 uid="uid://coue2qehpn4fr"]
+[gd_scene load_steps=26 format=3 uid="uid://coue2qehpn4fr"]
 
 [ext_resource type="Texture2D" uid="uid://b8q44ipg8a3cq" path="res://assets/Textures/Black.png" id="1_hwes2"]
 [ext_resource type="Texture2D" uid="uid://doyodkg1ds7td" path="res://assets/Textures/Sky.png" id="1_rrvcb"]
 [ext_resource type="PackedScene" uid="uid://cr2ersq7g6q6f" path="res://scenes/Characters/player.tscn" id="2_1g73n"]
 [ext_resource type="Texture2D" uid="uid://gwt4mrbmdv01" path="res://assets/Textures/Orange.png" id="2_087ax"]
 [ext_resource type="Texture2D" uid="uid://dkpqh8de7tb3n" path="res://assets/Textures/Green.png" id="3_qkav0"]
+[ext_resource type="ArrayMesh" uid="uid://b0k5xgjt4jc40" path="res://assets/meshes/lilboat.obj" id="6_1u5yj"]
+[ext_resource type="PackedScene" uid="uid://cpaakjj0g6tnt" path="res://assets/meshes/uploads_files_4007760_Lowpoly_Man_FBX.fbx" id="7_bccgx"]
+[ext_resource type="PackedScene" uid="uid://bgsv6g2wg3tyi" path="res://scenes/tree1.tscn" id="8_3n1pc"]
+[ext_resource type="PackedScene" uid="uid://0aryjxeno60" path="res://scenes/tree2tscn.tscn" id="9_htl4l"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_6c4vd"]
 panorama = ExtResource("1_rrvcb")
@@ -1246,3 +1250,44 @@ shape = SubResource("ConcavePolygonShape3D_v7prx")
 
 [node name="Player" parent="." instance=ExtResource("2_1g73n")]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0, 0)
+
+[node name="Lilboat" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.59328, 0, 13.8602)
+mesh = ExtResource("6_1u5yj")
+
+[node name="Lilboat2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.94722, 0, 13.9325)
+mesh = ExtResource("6_1u5yj")
+
+[node name="Lilboat3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.8646, 0, 13.6645)
+mesh = ExtResource("6_1u5yj")
+
+[node name="Huuman" parent="." instance=ExtResource("7_bccgx")]
+transform = Transform3D(-0.998952, 0, -0.0457641, 0, 1, 0, 0.0457641, 0, -0.998952, 6.30307, -9.53674e-07, 8.4211)
+
+[node name="Huuman2" parent="." instance=ExtResource("7_bccgx")]
+transform = Transform3D(-0.539829, 0, -0.841775, 0, 1, 0, 0.841775, 0, -0.539829, 21.8978, -9.53674e-07, 7.10351)
+
+[node name="Trees" type="Node" parent="."]
+
+[node name="Tree1" parent="Trees" instance=ExtResource("8_3n1pc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.464245, 0, -5.89613)
+
+[node name="Tree2" parent="Trees" instance=ExtResource("9_htl4l")]
+transform = Transform3D(0.757086, 0, 0.653315, 0, 1, 0, -0.653315, 0, 0.757086, -21.7328, 0, -5.15259)
+
+[node name="Tree7" parent="Trees" instance=ExtResource("9_htl4l")]
+transform = Transform3D(0.757086, 0, 0.653315, 0, 1, 0, -0.653315, 0, 0.757086, -11.0233, 0, 7.60696)
+
+[node name="Tree3" parent="Trees" instance=ExtResource("9_htl4l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.5041, 4.76837e-07, -6.38369)
+
+[node name="Tree4" parent="Trees" instance=ExtResource("9_htl4l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.3015, 0, -7.02959)
+
+[node name="Tree5" parent="Trees" instance=ExtResource("8_3n1pc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.53418, 0, 8.44543)
+
+[node name="Tree6" parent="Trees" instance=ExtResource("8_3n1pc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.2539, 0, 7.8505)
